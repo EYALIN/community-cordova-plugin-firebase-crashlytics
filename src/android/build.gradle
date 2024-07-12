@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        String gradlePluginFirebaseCrashlyticsClassPath = "com.google.firebase:firebase-crashlytics-gradle:2.9.1"
+        String gradlePluginFirebaseCrashlyticsClassPath = "com.google.firebase:firebase-crashlytics-gradle:3.0.2"
         println "Adding classpath: ${gradlePluginFirebaseCrashlyticsClassPath}"
         classpath gradlePluginFirebaseCrashlyticsClassPath
     }
