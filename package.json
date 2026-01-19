@@ -1,49 +1,44 @@
 {
-  "name": "cordova-plugin-firebase-crash",
-  "version": "8.0.8",
-  "description": "Cordova plugin for Firebase Crashlytics",
+  "name": "community-cordova-plugin-firebase-crashlytics",
+  "version": "1.1.0",
+  "description": "Community Cordova plugin for Firebase Crashlytics",
+  "main": "./types/index.d.ts",
   "types": "./types/index.d.ts",
   "cordova": {
-    "id": "cordova-plugin-firebase-crash",
+    "id": "community-cordova-plugin-firebase-crashlytics",
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chemerisuk/cordova-plugin-firebase-crash.git"
-  },
-  "author": "Maksim Chemerisuk <chemerisuk@gmail.com> (https://github.com/chemerisuk)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chemerisuk/cordova-plugin-firebase-crash/issues"
-  },
-  "homepage": "https://github.com/chemerisuk/cordova-plugin-firebase-crash#readme",
-  "funding": "https://github.com/chemerisuk/cordova-plugin-firebase-crash?sponsor=1",
+  "readme": "README.md",
+  "repository": "EYALIN/community-cordova-plugin-firebase-crashlytics",
+  "homepage": "https://github.com/EYALIN/community-cordova-plugin-firebase-crashlytics",
+  "funding": "https://github.com/sponsors/EYALIN",
+  "bugs": "https://github.com/EYALIN/community-cordova-plugin-firebase-crashlytics/issues",
   "keywords": [
     "cordova",
     "firebase",
-    "crash",
-    "analytics",
     "crashlytics",
+    "crash",
+    "google",
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios"
   ],
   "scripts": {
-    "preversion": "npm run docs && rm -rf docs",
-    "version": "perl -i -pe 's/(version=)\"\\d+\\.\\d+\\.\\d+\"/$1\"'$npm_package_version'\"$2/' plugin.xml && git add .",
-    "postversion": "git push && git push --tags",
-    "predocs": "tsc www/* --declaration --allowJs --checkJs --lib es2015,dom --emitDeclarationOnly --outDir types",
-    "docs": "typedoc && perl -i -pe 's/README.md#/#/g' ./docs/README.md",
-    "postdocs": "perl -i -0pe 's/(<!-- TypedocGenerated -->).*/$1\n\n/gms' README.md && cat ./docs/README.md >> README.md"
+    "test": "echo \"No tests yet\""
+  },
+  "author": "EYALIN",
+  "license": "MIT",
+  "engines": {
+    "cordovaDependencies": {
+      "1.0.0": {
+        "cordova": ">100"
+      }
+    }
   },
   "dependencies": {
     "xcode": "2.0.0"
-  },
-  "devDependencies": {
-    "typedoc": "^0.23.9",
-    "typedoc-plugin-markdown": "^3.13.4"
   }
 }

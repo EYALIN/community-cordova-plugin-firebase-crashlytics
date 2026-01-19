@@ -1,14 +1,29 @@
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-xmlns:android="http://schemas.android.com/apk/res/android"
-           id="cordova-plugin-firebase-crash"
-      version="8.0.8">
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed under MIT License
 
-    <name>cordova-plugin-firebase-crash</name>
-    <description>Cordova plugin for Firebase Crashlytics</description>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+-->
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="community-cordova-plugin-firebase-crashlytics"
+        version="1.1.0">
+
+    <name>community-cordova-plugin-firebase-crashlytics</name>
+    <description>Community Cordova plugin for Firebase Crashlytics</description>
     <license>MIT</license>
-    <keywords>cordova</keywords>
-    <repo>https://github.com/chemerisuk/cordova-plugin-firebase-crash</repo>
-    <issue>https://github.com/chemerisuk/cordova-plugin-firebase-crash/issues</issue>
+    <keywords>cordova,firebase,crashlytics,crash,ecosystem:cordova,cordova-android,cordova-ios</keywords>
+    <repo>https://github.com/EYALIN/community-cordova-plugin-firebase-crashlytics</repo>
+    <issue>https://github.com/EYALIN/community-cordova-plugin-firebase-crashlytics/issues</issue>
 
     <engines>
         <engine name="cordova" version=">=10.0.0"/>
@@ -22,8 +37,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
     <preference name="CRASHLYTICS_COLLECTION_ENABLED" default="true" />
 
+    <!-- iOS Platform -->
     <platform name="ios">
-        <preference name="IOS_FIREBASE_POD_VERSION" default="11.12.0" />
+        <preference name="IOS_FIREBASE_POD_VERSION" default="12.7.0" />
 
         <hook type="before_plugin_uninstall" src="hooks/ios/before_plugin_uninstall.js" />
 
@@ -55,10 +71,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </podspec>
     </platform>
 
+    <!-- Android Platform -->
     <platform name="android">
-        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="33.1.2" />
+        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="34.7.0" />
 
-             
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="FirebaseCrash">
                 <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseCrashPlugin" />
@@ -74,7 +90,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET" />
-  		</config-file>
+        </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <meta-data android:name="firebase_crashlytics_collection_enabled" android:value="$CRASHLYTICS_COLLECTION_ENABLED" />
@@ -83,10 +99,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <source-file src="src/android/FirebaseCrashPlugin.java" target-dir="src/by/chemerisuk/cordova/firebase/" />
 
         <dependency id="cordova-support-android-plugin" version="~2.0.4" />
-               
+
         <framework src="platform('com.google.firebase:firebase-bom:$ANDROID_FIREBASE_BOM_VERSION')" />
         <framework src="com.google.firebase:firebase-crashlytics" />
-               <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
     </platform>
 
 </plugin>
