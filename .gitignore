@@ -38,3 +38,7 @@ jspm_packages
 
 .DS_Store
 /docs
+
+# Gradle build artifacts
+.gradle/
+src/android/.gradle/

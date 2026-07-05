@@ -16,7 +16,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="community-cordova-plugin-firebase-crashlytics"
-        version="1.1.1">
+        version="1.1.2">
 
     <name>community-cordova-plugin-firebase-crashlytics</name>
     <description>Community Cordova plugin for Firebase Crashlytics</description>
@@ -39,7 +39,7 @@
 
     <!-- iOS Platform -->
     <platform name="ios">
-        <preference name="IOS_FIREBASE_POD_VERSION" default="12.7.0" />
+        <preference name="IOS_FIREBASE_POD_VERSION" default="12.15.0" />
 
         <hook type="before_plugin_uninstall" src="hooks/ios/before_plugin_uninstall.js" />
 
@@ -73,7 +73,7 @@
 
     <!-- Android Platform -->
     <platform name="android">
-        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="34.7.0" />
+        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="34.15.0" />
 
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="FirebaseCrash">
